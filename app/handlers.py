@@ -58,7 +58,7 @@ class CarBrandHandler(BaseHandler):
             content:
                 application/json:
                     schema:
-                        CarBrandCreate
+                        CarBrandCreateSchema
 
         responses:
             201:
@@ -66,14 +66,14 @@ class CarBrandHandler(BaseHandler):
                 content:
                     application/json:
                         schema:
-                            CarBrandCreateSuccess
+                            CarBrandCreateSuccessSchema
 
             400:
                 description: Bad request; Check `errors` for any validation errors
                 content:
                     application/json:
                         schema:
-                            BadRequest
+                            BadRequestSchema
 
         """
 

@@ -11,7 +11,7 @@ class BaseSchema(Schema):
 # =========
 
 
-class BaseSuccess(BaseSchema):
+class BaseSuccessSchema(BaseSchema):
     success = fields.Boolean(
         required=True,
         description='This is always "True" when a request succeeds',
@@ -19,7 +19,7 @@ class BaseSuccess(BaseSchema):
     )
 
 
-class BaseError(BaseSchema):
+class BaseErrorSchema(BaseSchema):
     success = fields.Boolean(
         required=True,
         description='This is always "False" when a request fails',
@@ -27,7 +27,7 @@ class BaseError(BaseSchema):
     )
 
 
-class BadRequest(BaseError):
+class BadRequestSchema(BaseErrorSchema):
     errors = fields.Dict(
         required=False,
         description="Attached request body validation errors",
@@ -60,13 +60,13 @@ class CarBrandSchema(BaseSchema):
     )
 
 
-class CarBrandCreate(CarBrandSchema):
+class CarBrandCreateSchema(CarBrandSchema):
     class Meta:
         ordered = True
         exclude = ("created_at",)
 
 
-class CarBrandCreateSuccess(BaseSuccess):
+class CarBrandCreateSuccessSchema(BaseSuccessSchema):
     car_brand = fields.Nested(
         CarBrandSchema,
         required=True,

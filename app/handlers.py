@@ -4,7 +4,7 @@ from datetime import datetime
 
 from tornado.web import RequestHandler
 
-from schemas import CarBrandSchema
+from .schemas import CarBrandSchema
 
 # Let this be our database,
 # purely for demonstration :)

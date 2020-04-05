@@ -1,9 +1,9 @@
 """Main application module"""
+import swagger_ui
 import tornado.ioloop
 import tornado.web
-import swagger_ui
 
-from handlers import CarBrandHandler
+from app.handlers import CarBrandHandler
 from init_swagger import generate_swagger_file
 
 SWAGGER_API_OUTPUT_FILE = "./swagger.json"
@@ -11,7 +11,7 @@ SWAGGER_API_OUTPUT_FILE = "./swagger.json"
 
 def make_app():
     handlers = [
-        (r"/brand", CarBrandHandler),
+        (r"/brands", CarBrandHandler),
     ]
 
     # Initialize Tornado application

@@ -1,6 +1,6 @@
 # Tornado Swagger implementation
 
-Implement Swagger with your Tornado project. The related article can be found from [Medium](https://medium.com/@juhoenala/using-swagger-with-tornado-a6f051342718).
+Implement Swagger in your Tornado project. The related article can be found from [Medium](https://medium.com/@juhoenala/using-swagger-with-tornado-a6f051342718).
 
 ## Getting started
 
